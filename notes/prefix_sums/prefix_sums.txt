@@ -184,3 +184,113 @@ especially when dealing with large datasets or when speed is critical.
 
 
 
+
+
+
+# Range Sum Queries
+
+Range Sum Queries are one of the most straightforward and impactful applications of prefix sums. 
+Here's how they work and their benefits:
+
+What are Range Sum Queries?
+Range Sum Queries involve finding the sum of elements within a specified range of an array. 
+For an array A and a range [l, r] (where l is the left boundary and r is the right boundary), you want to 
+compute A[l] + A[l+1] + ... + A[r].
+
+Using Prefix Sums for Range Sum Queries
+
+Precomputation:
+First, compute the prefix sum array P where P[i] is the sum of all elements from A[0] to A[i].
+
+Querying:
+To find the sum of elements from l to r:
+If l is 0, the sum is simply P[r].
+Otherwise, the sum is P[r] - P[l-1]. This works because P[r] includes the sum up to r, and by subtracting P[l-1], 
+you remove the sum of elements before l.
+
+Benefits of Using Prefix Sums:
+
+Time Complexity: After the initial O(n) time for computing the prefix sum array, each query takes O(1) time, 
+significantly reducing the time for subsequent queries from O(r-l+1) to O(1).
+
+Space Complexity: Additional O(n) space for storing the prefix sum array, but this is often a good trade-off 
+for the speed gained in queries.
+
+Flexibility: Allows for quick modifications to the array and recomputation of only the affected parts of the prefix sum array.
+
+Implementation Example in Python:
+python
+def create_prefix_sum(arr):
+    prefix_sum = [0] * len(arr)
+    prefix_sum[0] = arr[0]
+    for i in range(1, len(arr)):
+        prefix_sum[i] = prefix_sum[i-1] + arr[i]
+    return prefix_sum
+
+def range_sum_query(prefix_sum, l, r):
+    if l == 0:
+        return prefix_sum[r]
+    return prefix_sum[r] - prefix_sum[l-1]
+
+# Example usage
+A = [1, 3, 4, 8, 6, 1, 4, 2]
+P = create_prefix_sum(A)
+
+See src/prefix_sums/example03.cpp
+
+# Query for sum from index 2 to 5
+print(range_sum_query(P, 2, 5))  # Output should be 19 (4+8+6+1)
+
+Applications:
+Database Systems: Efficiently answering sum queries for large datasets in real-time analytics.
+
+Algorithmic Problems: Common in coding challenges where you need to process multiple queries quickly.
+
+Financial Systems: Quick aggregation of financial data over time periods.
+
+Graphics: For computing sums over regions in image processing or game development where performance is key. (This is good to know given
+That I'm a game developer)
+
+Considerations:
+Updates: If the original array changes, you must update the prefix sum array accordingly, which can be done in O(1) per update if you only modify one element.
+Large Arrays: For very large arrays, the additional memory for the prefix sum might be a concern, though often the time savings justify this.
+
+This approach with prefix sums makes range sum queries one of the most optimized operations for scenarios involving frequent sum computations over different parts of an array.
+
+
+1
+Array: [1, 2, 3, 4]
+Prefix Sum: [1, 3, 6, 10]
+    a. Sum(1, 2) = 5
+    b. Sum(2, 3) = 7
+    c. Sum(0, 3) = 10
+
+2
+Array: [5, -1, 3, 7]
+Prefix Sum: [5, 4, 7, 14]
+    a. Sum(1, 2) = 2
+    b. Sum(2, 3) = 10
+    c. Sum(0, 3) = 14
+3
+Array: [-1, -2, -3, -4]
+Prefix Sum: [-1, -3, -6, -10]
+    a. Sum(1, 2) = -5
+    b. Sum(2, 3) = -7
+    c. Sum(0, 3) = -10
+
+5
+Array: [9, 8, 7, 6, 5]
+Prefix Sum: [9, 17, 24, 30, 35]
+    a. Sum(1, 3) = 21
+    b. Sum(2, 4) = 18
+    c. Sum(0, 4) = 35
+
+
+see src/prefix_sums/example04.cpp
+
+Solve Leetcode Problem 303 Range Sum Query ~ Immutable Easy
+https://leetcode.com/problems/range-sum-query-immutable/description/
+
+Solve Leetcode Problem 307 Range Sum Query ~ Mutable Medium
+https://leetcode.com/problems/range-sum-query-mutable/
+

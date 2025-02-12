@@ -13,6 +13,13 @@ namespace presums {
 
     void example01();
     void example02();
+
+    // Range Sum Queries
+    void example03();
+    void example04();
+
+    // Leet Code Problems for Range Sum Query
+    
 };
 
 
