@@ -61,7 +61,54 @@ A = [1, 2, 3, 4, 5]
 P = prefix_sums(A)
 print(P)  # Output: [1, 3, 6, 10, 15]
 
-See src/prefix_sums/example01
+See src/prefix_sums/example01.cpp
+
+Exercise 01:
+Make a program that takes in array and give returns the prefix sum array for
+these examples.
+
+1
+Array: [1, 2, 3, 4]
+Prefix Sum: [1, 3, 6, 10]
+
+2
+Array: [5, -1, 3, 7]
+Prefix Sum: [5, 4, 7, 14]
+
+3
+Array: [0, 0, 0, 1]
+Prefix Sum: [0, 0, 0, 1]
+
+4
+Array: [10, -5, 20, 15]
+Prefix Sum: [10, 5, 25, 40]
+
+5
+Array: [2, 3, 5, 7, 11]
+Prefix Sum: [2, 5, 10, 17, 28]
+
+6
+Array: [-1, -2, -3, -4]
+Prefix Sum: [-1, -3, -6, -10]
+
+7
+Array: [1, 1, 1, 1, 1]
+Prefix Sum: [1, 2, 3, 4, 5]
+
+8
+Array: [9, 8, 7, 6, 5]
+Prefix Sum: [9, 17, 24, 30, 35]
+
+9
+Array: [4, 0, 0, 0, 4]
+Prefix Sum: [4, 4, 4, 4, 8]
+
+10
+Array: [3, -3, 3, -3, 3]
+Prefix Sum: [3, 0, 3, 0, 3]
+
+See src/prefix_sums/example02.cpp for a bunch of examples on varius 
+arrays.
 
 Prefix sums are particularly useful in algorithms where you need to compute sums over ranges frequently, 
 like in dynamic programming, data structures like segment trees, or for optimizing certain types of queries 

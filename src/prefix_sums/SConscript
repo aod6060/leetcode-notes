@@ -6,5 +6,6 @@ def source(file):
 
 env["source_files"] += [
     source("prefix_sums.cpp"),
-    source("example01.cpp")
+    source("example01.cpp"),
+    source("example02.cpp")
 ]

@@ -12,7 +12,7 @@ namespace presums {
 
 
     void example01();
-    
+    void example02();
 };
 
 
