@@ -9,5 +9,6 @@ env["source_files"] += [
     source("example01.cpp"),
     source("example02.cpp"),
     source("example03.cpp"),
-    source("example04.cpp")
+    source("example04.cpp"),
+    source("leetcode_problem_303.cpp")
 ]

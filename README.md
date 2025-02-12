@@ -2,7 +2,7 @@
 
 
 This repo contains notes and examples of topic you'll run into solving problems at leetcode. What you won't find is
-anwsers to individual problems in this repo. The goal is to understand why leetcode has these problems and what the 
+anwsers to individual problems in this repo unless it adds to the topic add hand or evaluates skills. The goal is to understand why leetcode has these problems and what the 
 solution can be used to solved outside of leetcode.
 
 You might have noticed on your adveture though solving leetcode problems are patterns that lead to the most optimum

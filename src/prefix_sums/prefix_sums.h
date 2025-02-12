@@ -19,6 +19,7 @@ namespace presums {
     void example04();
 
     // Leet Code Problems for Range Sum Query
+    void leetcode_problem_303();
     
 };
 
