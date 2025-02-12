@@ -1,0 +1,139 @@
+# Title: Prefix Sums
+
+This contains information about what a prefix sums is and were to apply
+it. This documents will contain exerts from grok ai and other sources as 
+well as some documentation from me as well. It basically notes.
+
+Note: If you see a See src/prefix_sums/example01.cpp for example this is 
+example code that I've written about the subject. There will also be 
+additional
+
+## Prefix Sums (or Cumulative Sums)
+
+Prefix sums, also known as cumulative sums, are a technique used in computer science and mathematics to precompute sums 
+of elements in an array up to each position. This can significantly speed up queries asking for the sum of any subarray 
+or range within the array.
+
+Here's a brief explanation:
+
+Definition: Given an array A with n elements, the prefix sum array P is defined such that P[i] is the sum of all elements
+in A from index 0 to i. Mathematically, P[i] = A[0] + A[1] + ... + A[i].
+
+Formula: 
+P[0] = A[0]
+For i > 0, P[i] = P[i-1] + A[i]
+
+Use Cases:
+Range Sum Query: If you want to find the sum of elements from index j to k (inclusive), you can use P[k] - P[j-1] (assuming 
+j > 0, otherwise it's just P[k] for j = 0).
+
+Reducing Time Complexity: For multiple queries on sums of different ranges, computing prefix sums once reduces the time 
+complexity for each query from O(n) to O(1).
+
+Example:
+
+Let's say we have an array A = [1, 2, 3, 4, 5]. The prefix sum array P would be:
+
+P[0] = 1
+P[1] = 1 + 2 = 3
+P[2] = 3 + 3 = 6
+P[3] = 6 + 4 = 10
+P[4] = 10 + 5 = 15
+
+So, P = [1, 3, 6, 10, 15].
+
+To find the sum from index 1 to 3 in A, you would calculate P[3] - P[0] = 10 - 1 = 9.
+
+Here's how you might implement this in Python:
+
+python
+    def prefix_sums(arr):
+        p = [0] * len(arr)
+        p[0] = arr[0]
+        for i in range(1, len(arr)):
+            p[i] = p[i-1] + arr[i]
+        return p
+
+
+
+# Example usage
+A = [1, 2, 3, 4, 5]
+P = prefix_sums(A)
+print(P)  # Output: [1, 3, 6, 10, 15]
+
+See src/prefix_sums/example01
+
+Prefix sums are particularly useful in algorithms where you need to compute sums over ranges frequently, 
+like in dynamic programming, data structures like segment trees, or for optimizing certain types of queries 
+in competitive programming.
+
+# Applications of Prefix Sums
+
+Prefix sums have numerous applications across various fields due to their efficiency in handling sum queries 
+over ranges. Here are some key applications:
+
+## Range Sum Queries:
+
+Prefix sums allow for O(1) time complexity to compute the sum of any subarray once the prefix sum array 
+is computed. This is particularly useful in scenarios where you need to frequently query sums over different 
+ranges of an array.
+
+## Dynamic Programming:
+
+In some dynamic programming problems, prefix sums can precompute partial results, making the computation of 
+subsequent steps faster, especially in problems involving subarray sums.
+
+## Subarray Problems:
+
+Checking if there's a subarray with sum zero or finding all subarrays with a specific sum can be efficiently 
+done with prefix sums, reducing time complexity from O(n^3) or O(n^2) to O(n) in some cases.
+
+## Sliding Window Techniques:
+
+For algorithms that use sliding windows over an array, prefix sums can quickly calculate the sum within the 
+current window, improving performance over recalculating the sum each time.
+
+Counting Subarrays with Specific Properties:
+Counting subarrays with sum equal to a target value, or the number of subarrays with sum less than a 
+given value, can be done more efficiently with prefix sums.
+
+##2D Prefix Sum (for 2D arrays):
+
+Extends the concept to two dimensions for quick sum queries in any rectangular region of a matrix, useful 
+in image processing, game design, or any scenario involving 2D data.
+
+##Time Series Analysis:
+
+In data analysis, especially with time series data, prefix sums can be used to quickly calculate cumulative 
+metrics like running totals or averages over time periods.
+
+##Real-time Data Processing:
+
+In applications requiring real-time data analysis, prefix sums can provide instant results for queries about 
+data accumulated up to certain points, like in financial systems or live sports statistics.
+String Matching and Algorithmic Problems:
+
+Certain string matching problems or complex algorithmic questions in competitive programming can benefit from 
+prefix sums for efficient sum-based checks or comparisons.
+
+##Space Efficiency in Algorithms:
+
+Although prefix sums require additional space to store the array, for algorithms where this space is not prohibitive, 
+they offer significant time savings. This trade-off is beneficial in scenarios where memory is not the limiting factor but 
+time is.
+
+##Optimization Problems:
+
+In optimization, prefix sums can help in quickly evaluating different configurations or paths by summing up contributions 
+up to a certain point.
+
+##Data Preprocessing for Machine Learning:
+
+Precomputing sums or averages over data segments can be useful for feature engineering or for certain types of data aggregation 
+needed in machine learning preprocessing stages.
+
+These applications highlight how prefix sums can transform problems from being computationally intensive to manageable, 
+especially when dealing with large datasets or when speed is critical.
+
+
+

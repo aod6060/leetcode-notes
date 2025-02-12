@@ -1,0 +1,10 @@
+Import("env")
+
+
+def source(file):
+    return "#/src/prefix_sums/" + file
+
+env["source_files"] += [
+    source("prefix_sums.cpp"),
+    source("example01.cpp")
+]
