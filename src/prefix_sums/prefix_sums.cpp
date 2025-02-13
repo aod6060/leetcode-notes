@@ -16,6 +16,7 @@ namespace presums {
         context["prefix-sums/example05/kadane_algorithm"] = example05_kadane_algorithm;
         context["prefix-sums/example06"] = example06;
         context["prefix-sums/example07"] = example07;
+        context["prefix-sums/example08"] = example08;
     }
 
 }

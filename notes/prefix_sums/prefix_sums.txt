@@ -348,6 +348,8 @@ Problem: Find if there's a subarray with sum divisible by K.
 Prefix Sum Use: Compute prefix sums modulo K. If two prefix sums have the same remainder when divided 
 by K, there's a subarray with sum divisible by K.
 
+See src/prefix_sums/example08.cpp
+
 5. Longest Subarray with Sum K
 
 Problem: Find the length of the longest subarray with sum K.
