@@ -297,3 +297,110 @@ Solve Leetcode Problem 307 Range Sum Query ~ Mutable Medium
 https://leetcode.com/problems/range-sum-query-mutable/
 
 see src/prefix_sums/leetcode_problem_307.cpp
+
+
+
+## Subarray Problems
+
+Subarray problems are a common class of algorithmic challenges where you need to analyze or compute 
+something based on contiguous segments of an array. Prefix sums play a significant role in solving 
+many of these problems efficiently. Here are some key subarray problems where prefix sums are 
+particularly useful:
+
+1. Maximum Subarray Sum (Kadane's Algorithm)
+
+Problem: Find the contiguous subarray (containing at least one number) which has the largest sum.
+
+Prefix Sum Use: While Kadane's algorithm doesn't strictly use prefix sums, a variation can involve 
+computing prefix sums to find the maximum sum in O(n) time by considering all possible starting 
+points.
+
+See src/prefix_sums/example05.cpp (Prefix Sums + Kadane's Algorithm)
+See notes/prefix_sums/kadane_algorithm.txt For the most optimal way to solve Maximum Subarray Sum
+See src/prefix_sums/example05_kadane_algorithm.cpp
+
+Also check out leetcode problem 53 (which I solved accendently lol)
+
+https://leetcode.com/problems/maximum-subarray/description/
+
+2. Subarray with Given Sum
+
+Problem: Find if there exists a subarray with sum equal to K.
+
+Prefix Sum Use: Use a hash map to store the frequency of each prefix sum; if sum - K has been seen 
+before, a subarray with sum K exists. This reduces the problem from O(n^2) to O(n).
+
+3. Count Subarrays with Sum Zero
+
+Problem: Count how many subarrays have a sum of zero.
+
+Prefix Sum Use: Similar to the above, use a hash map to count how many times each prefix sum occurs. 
+If a prefix sum repeats, it means there's at least one subarray with sum zero for each repeat.
+
+4. Subarray with Sum Divisible by K
+
+Problem: Find if there's a subarray with sum divisible by K.
+
+Prefix Sum Use: Compute prefix sums modulo K. If two prefix sums have the same remainder when divided 
+by K, there's a subarray with sum divisible by K.
+
+5. Longest Subarray with Sum K
+
+Problem: Find the length of the longest subarray with sum K.
+
+Prefix Sum Use: Similar to finding a subarray with sum K, but track the maximum length between two indices 
+where the difference in their prefix sums equals K.
+
+6. Smallest Subarray with Sum Greater Than K
+
+Problem: Find the smallest subarray length with sum greater than K.
+
+Prefix Sum Use: Use a sliding window with help from prefix sums to efficiently manage the window's sum.
+
+7. Subarrays with All Elements Equal
+
+Problem: Count subarrays where all elements are equal to K.
+
+Prefix Sum Use: While not strictly using prefix sums, you can use them to quickly check ranges if combined 
+with a preprocessing step to count occurrences of K.
+
+8. Subarray with Exactly K Distinct Elements
+
+Problem: Find if there exists a subarray with exactly K distinct elements.
+
+Prefix Sum Use: This problem typically uses sliding windows, but prefix sums can be used in preprocessing 
+to speed up certain checks or in combination with other data structures like hash maps.
+
+Implementation Example:
+
+Here's a simple example for finding a subarray with sum K using prefix sums in Python:
+
+python
+def subarraySum(nums, k):
+    count = {0: 1}  # Map to store number of prefix sums
+    current_sum = 0
+    result = 0
+
+    for num in nums:
+        current_sum += num
+        if current_sum - k in count:
+            result += count[current_sum - k]
+        count[current_sum] = count.get(current_sum, 0) + 1
+
+    return result
+
+# Example usage
+nums = [1, 2, 3, 4, 5]
+k = 9
+print(subarraySum(nums, k))  # Output: 2 (1,2,3,4) and (2,3,4)
+
+Considerations:
+Space Complexity: Using hash maps or additional arrays for prefix sums increases space usage, 
+which might be a concern for very large datasets.
+
+
+Time Complexity: Prefix sums often turn quadratic or worse time complexities into linear ones, 
+significantly speeding up solutions.
+
+Prefix sums are a versatile tool in solving subarray problems, offering a way to quickly check 
+conditions across various ranges of an array with a single pass through the data.

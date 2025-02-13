@@ -12,6 +12,8 @@ namespace presums {
         context["prefix-sums/example04"] = example04;
         context["prefix-sums/leetcode_problem_303"] = leetcode_problem_303;
         context["prefix-sums/leetcode_problem_307"] = leetcode_problem_307;
+        context["prefix-sums/example05"] = example05;
+        context["prefix-sums/example05/kadane_algorithm"] = example05_kadane_algorithm;
     }
 
 }

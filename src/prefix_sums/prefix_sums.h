@@ -21,6 +21,11 @@ namespace presums {
     // Leet Code Problems for Range Sum Query
     void leetcode_problem_303();
     void leetcode_problem_307();
+
+    // Subarray Problems
+    void example05();
+    void example05_kadane_algorithm();
+    
 };
 
 

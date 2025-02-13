@@ -11,5 +11,7 @@ env["source_files"] += [
     source("example03.cpp"),
     source("example04.cpp"),
     source("leetcode_problem_303.cpp"),
-    source("leetcode_problem_307.cpp")
+    source("leetcode_problem_307.cpp"),
+    source("example05.cpp"),
+    source("example05_kadane_algorithm.cpp")
 ]
