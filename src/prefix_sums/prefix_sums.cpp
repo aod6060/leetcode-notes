@@ -17,6 +17,7 @@ namespace presums {
         context["prefix-sums/example06"] = example06;
         context["prefix-sums/example07"] = example07;
         context["prefix-sums/example08"] = example08;
+        context["prefix-sums/example09"] = example09;
     }
 
 }

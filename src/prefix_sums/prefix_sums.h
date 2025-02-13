@@ -29,7 +29,8 @@ namespace presums {
     void example06();
     void example07();
     void example08();
-
+    void example09();
+    
 };
 
 

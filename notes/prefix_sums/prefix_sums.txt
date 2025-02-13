@@ -357,6 +357,8 @@ Problem: Find the length of the longest subarray with sum K.
 Prefix Sum Use: Similar to finding a subarray with sum K, but track the maximum length between two indices 
 where the difference in their prefix sums equals K.
 
+See src/prefix_sums/example09.cpp
+
 6. Smallest Subarray with Sum Greater Than K
 
 Problem: Find the smallest subarray length with sum greater than K.
