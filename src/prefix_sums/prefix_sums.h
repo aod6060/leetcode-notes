@@ -25,7 +25,10 @@ namespace presums {
     // Subarray Problems
     void example05();
     void example05_kadane_algorithm();
+
+    void example06();
     
+
 };
 
 
