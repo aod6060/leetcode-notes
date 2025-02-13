@@ -20,7 +20,7 @@ namespace presums {
 
     // Leet Code Problems for Range Sum Query
     void leetcode_problem_303();
-    
+    void leetcode_problem_307();
 };
 
 
