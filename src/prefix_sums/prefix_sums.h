@@ -27,7 +27,7 @@ namespace presums {
     void example05_kadane_algorithm();
 
     void example06();
-    
+    void example07();
 
 };
 

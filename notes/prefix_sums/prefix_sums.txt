@@ -330,12 +330,16 @@ Problem: Find if there exists a subarray with sum equal to K.
 Prefix Sum Use: Use a hash map to store the frequency of each prefix sum; if sum - K has been seen 
 before, a subarray with sum K exists. This reduces the problem from O(n^2) to O(n).
 
+See src/prefix_sums/example06.cpp
+
 3. Count Subarrays with Sum Zero
 
 Problem: Count how many subarrays have a sum of zero.
 
 Prefix Sum Use: Similar to the above, use a hash map to count how many times each prefix sum occurs. 
 If a prefix sum repeats, it means there's at least one subarray with sum zero for each repeat.
+
+See src/prefix_sums/example07.cpp
 
 4. Subarray with Sum Divisible by K
 
